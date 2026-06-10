@@ -1,2 +1,2 @@
 # exercicios-coleçao-python
-Exercício para testar habiliddes.
+Exercício para testar habilidades.
