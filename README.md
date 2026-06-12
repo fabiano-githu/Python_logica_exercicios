@@ -1,2 +1,3 @@
-# exercicios-coleçao-python
-Exercício para testar habilidades.
+Python_logica_exercicios
+
+Exercício de lógica com Python
