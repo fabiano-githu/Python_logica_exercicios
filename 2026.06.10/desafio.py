@@ -68,17 +68,24 @@ users = [
 	}
 ]
 
+
+
+# 1. Mostrar todos os dados do primeiro usuário
 print(users[0])
 
 
+# Mostrar todos os dados do último usuário
 print(users[-1])
 
 
+# 2. Mostrar a senha do "Hermenildo Sagassuga"
 for user in users:
     if user["name"] == "Hermenildo Sagassuga":
         print(user["password"])
         
+		
         
+# 3. Mostrar o e-mail do "Setembrino Trocatapas"      
 for user in users:
     if user["name"] == "Setembrino Trocatapas":
         print(user["email"])
