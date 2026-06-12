@@ -41,7 +41,6 @@ Mostre os códigos necessários para:
  Adicionar a chave "active": True em todos os usuários.'''
 
 
-
 users = [
 	{
 		"name": "Joca da Silva",
@@ -69,15 +68,89 @@ users = [
 	}
 ]
 
+print(users[0])
+
+
+print(users[-1])
+
 
 for user in users:
-    print(user["name"])
+    if user["name"] == "Hermenildo Sagassuga":
+        print(user["password"])
+        
+        
+for user in users:
+    if user["name"] == "Setembrino Trocatapas":
+        print(user["email"])
+        
+
+		
+		
+# 4. Criar uma lista contendo todos os e-mails e exibir
+emails = []
+
+for user in users:
+    emails.append(user["email"])
+
+print(emails)
 
 
-print(users[2]["password"])
+# 5. Mostrar apenas o primeiro nome de todos os usuários
+for user in users:
+    print(user["name"].split()[0])
+    
 
 
-print(users[3]["email"])
+# 6. Mostrar quantos usuários existem na lista
+print(len(users))
+    
 
 
-print(users[3]["email"])
+
+# 7. Criar uma lista contendo apenas os nomes e exibir em ordem alfabética
+nomes = []
+
+for user in users:
+    nomes.append(user["name"])
+
+nomes.sort()
+
+print(nomes)
+
+
+# 8. Alterar o e-mail de "Marineuza Siriliano"
+for user in users:
+    if user["name"] == "Marineuza Siriliano":
+        user["email"] = "marineuza@email.com"
+
+print(users)
+
+
+# 9. Adicionar um novo usuário à lista
+novo_usuario = {
+    "name": "Fabiano Santos",
+    "email": "fabiano@email.com",
+    "birth": "1990-01-01",
+    "password": "123456"
+}
+
+users.append(novo_usuario)
+
+print(users)
+
+
+
+# 10. Remover o usuário "Setembrino Trocatapas"
+for user in users:
+    if user["name"] == "Setembrino Trocatapas":
+        users.remove(user)
+
+print(users)
+
+
+
+# 11. Adicionar a chave "active": True em todos os usuários
+for user in users:
+    user["active"] = True
+
+print(users)

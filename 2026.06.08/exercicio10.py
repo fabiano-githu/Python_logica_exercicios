@@ -21,7 +21,7 @@ ou
 '''
 
 # Crie as variáveis:
-idade = 20
+idade = 30
 possui_convite = True
 
 # Utilize o operador `and` dentro de uma estrutura `if`.
