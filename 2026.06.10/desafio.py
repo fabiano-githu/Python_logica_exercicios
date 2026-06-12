@@ -1,5 +1,7 @@
-'''Desafio. Observe a variável abaixo:
+'''
+Desafio. Observe a variável abaixo:
 
+```
 users = [
 	{
 		"name": "Joca da Silva",
@@ -26,21 +28,28 @@ users = [
 		"password": "P0o9i8u7y6"
 	}
 ]
+```
+
 Mostre os códigos necessários para:
 
- Mostrar todos os dados do primeiro e último usuário cadastrados.
- Mostrar a senha do "Hermenildo Sagassuga".
- Mostrar o e-mail do "Setembrino Trocatapas".
- Criar uma lista contendo todos os e-mails e exibir.
- Mostrar apenas o primeiro nome de todos os usuários.
- Mostrar quantos usuários existem na lista.
- Criar uma lista contendo apenas os nomes e exibir em ordem alfabética.
- Alterar o e-mail de "Marineuza Siriliano".
- Adicionar um novo usuário à lista.
- Remover o usuário "Setembrino Trocatapas".
- Adicionar a chave "active": True em todos os usuários.'''
+ - Mostrar todos os dados do primeiro e último usuário cadastrados.
+ - Mostrar a senha do "Hermenildo Sagassuga".
+ - Mostrar o e-mail do "Setembrino Trocatapas".
+ - Criar uma lista contendo todos os e-mails e exibir.
+ - Mostrar apenas o primeiro nome de todos os usuários.
+ - Mostrar quantos usuários existem na lista.
+ - Criar uma lista contendo apenas os nomes e exibir em ordem alfabética.
+ - Alterar o e-mail de "Marineuza Siriliano".
+ - Adicionar um novo usuário à lista.
+ - Remover o usuário "Setembrino Trocatapas".
+ - Adicionar a chave "active": True em todos os usuários.
+ - Mostrar o dicionário atualizado.
 
+'''
 
+import pprint
+
+# Lista de dicionários representando os usuários
 users = [
 	{
 		"name": "Joca da Silva",
@@ -68,96 +77,82 @@ users = [
 	}
 ]
 
+# Mostrar todos os dados do primeiro e último usuário cadastrados.
+print("\n")
+print("Primeiro usuário:", users[0])
+print("Último usuário:", users[-1])
 
+# Mostrar a senha do "Hermenildo Sagassuga".
+print("\n")
+print("Senha:", users[2]["password"])
 
-# 1. Mostrar todos os dados do primeiro usuário
-print(users[0])
+# Mostrar o e-mail do "Setembrino Trocatapas".
+print("\n")
+print("E-mail:", users[3]["email"])
 
-
-# Mostrar todos os dados do último usuário
-print(users[-1])
-
-
-# 2. Mostrar a senha do "Hermenildo Sagassuga"
+# Criar uma lista contendo todos os e-mails e exibir.
+print("\n")
+emails = [] # inicializa a lista de e-mails
+# Iterador para extrair os usuários
 for user in users:
-    if user["name"] == "Hermenildo Sagassuga":
-        print(user["password"])
-        
-		
-        
-# 3. Mostrar o e-mail do "Setembrino Trocatapas"      
-for user in users:
-    if user["name"] == "Setembrino Trocatapas":
-        print(user["email"])
-        
-
-		
-		
-# 4. Criar uma lista contendo todos os e-mails e exibir
-emails = []
-
-for user in users:
-    emails.append(user["email"])
-
-print(emails)
-
-
-# 5. Mostrar apenas o primeiro nome de todos os usuários
-for user in users:
-    print(user["name"].split()[0])
+    emails.append(user["email"]) # adiciona o e-mail do usuário atual à lista de e-mails
+    # ou imprima diretamente o e-mail do usuário atual
+    print(" • Nome:", user["name"])
+    print("       • E-mail:", user["email"])
     
+print("\nEmails: ", emails)
 
-
-# 6. Mostrar quantos usuários existem na lista
-print(len(users))
-    
-
-
-
-# 7. Criar uma lista contendo apenas os nomes e exibir em ordem alfabética
-nomes = []
-
+# Mostrar apenas o primeiro nome de todos os usuários.
+print("\n")
+print("Primeiros nomes:")
 for user in users:
-    nomes.append(user["name"])
+	first_name = user["name"].split(" ")[0] # divide o nome completo e pega o primeiro elemento
+	print(" • ", first_name)
+      
+# Mostrar quantos usuários existem na lista.
+print("\n")	  
+print("Quantidade de usuários:", len(users))
 
-nomes.sort()
+# Criar uma lista contendo apenas os nomes e exibir em ordem alfabética.
+print("\n")	
+names = [] # inicializa a lista de nomes
+for user in users:	
+	names.append(user["name"]) # adiciona o nome do usuário atual à lista de nomes
+print("Nomes na ordem obtida: ", names)
+names.sort() # ordena a lista de nomes em ordem alfabética
+print("Nomes em ordem alfabética: ", names)
 
-print(nomes)
+# Alterar o e-mail de "Marineuza Siriliano".
+print("\n")
+users[1]["email"] = "marineuzinha.siriliano@email.com" # altera o e-mail do segundo usuário (índice 1)
+print("E-mail atualizado de Marineuza Siriliano:", users[1]["email"])
 
-
-# 8. Alterar o e-mail de "Marineuza Siriliano"
-for user in users:
-    if user["name"] == "Marineuza Siriliano":
-        user["email"] = "marineuza@email.com"
-
-print(users)
-
-
-# 9. Adicionar um novo usuário à lista
-novo_usuario = {
-    "name": "Fabiano Santos",
-    "email": "fabiano@email.com",
-    "birth": "1990-01-01",
-    "password": "123456"
+# Adicionar um novo usuário à lista.
+print("\n")	
+new_user = {
+	"name": "Carlos Eduardo",
+	"email": "carlinhos@email.com",
+	"birth": "1995-07-30",
+	"password": "C1a2r3l4o5s6"
 }
+users.append(new_user) # adiciona o novo usuário à lista de usuários
 
-users.append(novo_usuario)
+# Remover o usuário "Setembrino Trocatapas".
+print("\n")
+users.pop(3) # remove o usuário no índice 3 (Setembrino Trocatapas)
+# ou
+# users.remove(users[3]) # remove o usuário no índice 3 (Setembrino Trocatapas)
+# ou
+# del users[3] # remove o usuário no índice 3 (Setembrino Trocatapas)
 
+# Adicionar a chave "active": True em todos os usuários.
+print("\n")
+for user in users:	
+	user["active"] = True # adiciona a chave "active" com o valor True para cada usuário
+
+# Mostrar o dicionário atualizado.
+print("\nUsuários atualizado:")
 print(users)
 
-
-
-# 10. Remover o usuário "Setembrino Trocatapas"
-for user in users:
-    if user["name"] == "Setembrino Trocatapas":
-        users.remove(user)
-
-print(users)
-
-
-
-# 11. Adicionar a chave "active": True em todos os usuários
-for user in users:
-    user["active"] = True
-
-print(users)
+# Motrar o dicionário atualizado de forma mais legível
+pprint.pprint(users)
