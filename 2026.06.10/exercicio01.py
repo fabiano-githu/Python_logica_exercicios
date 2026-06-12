@@ -1,4 +1,3 @@
-
 '''
 Exercício 01
 Mostre os códigos para os seguintes passos:
